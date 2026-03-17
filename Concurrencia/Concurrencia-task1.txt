@@ -1,0 +1,14 @@
+1. The Definition of Moore's Law
+Moore's Law is an empirical observation made by Gordon Moore which states that the density of transistors on a microchip doubles approximately every two years, leading to a proportional increase in computational power and a decrease in relative cost.
+
+2. The Power Wall and Temperature Limits (Dennard Scaling Breakdown)
+For a long time, Dennard Scaling allowed transistors to get smaller while maintaining power density, meaning voltage could be lowered to prevent overheating. However, this has stopped being true. We have hit the "Power Wall". Transistors cannot be scaled down with lower voltages infinitely without causing severe current leakage. As a result, increasing the clock speed (frequency) generates excessive heat that cannot be efficiently dissipated, melting the chip.
+
+3. The Speed of Light Limitation
+Another absolute physical boundary is the speed of light. As clock frequencies increase to the gigahertz range, the time duration of a single clock cycle becomes incredibly short. Because electrical signals cannot travel faster than the speed of light, data physically cannot cross the entire surface of the processor within a single clock cycle if the chip operates at aggressively high frequencies.
+
+4. Quantum Tunneling and Atomic Limits
+We are manufacturing transistors so infinitesimally small that their components are only a few atoms thick. At this microscopic scale, classical physics breaks down and quantum mechanics takes over. Specifically, quantum tunneling occurs, where electrons spontaneously jump across the physical barriers of the transistor even when it is in the "off" state. This causes uncontrollable energy leakage and corrupts data processing.
+
+5. The Consequence: The Shift to Multi-Core and Concurrency
+Because single-processor clock speeds can no longer improve due to these thermal, light-speed, and quantum limitations, the industry had to pivot. The solution to hide latency and keep improving performance was the transition to multi-core architectures. Instead of making one single core faster, manufacturers place multiple cores on a chip, requiring modern software to utilize concurrent execution (like Goroutines in Go) to achieve high performance.
